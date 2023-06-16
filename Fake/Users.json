@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "Frederick Montiel",
+        "email": "fmontiel@easyprojects.tech",
+        "social": {
+            "telegram": "@easyprojects_tech"
+        }
+    },
+    {
+        "id": 2,
+        "name": "Jhon Doe",
+        "email": "jdoe@easyprojects.tech",
+        "social": {
+            "telegram": "@jhondoe"
+        }
+    }
+]

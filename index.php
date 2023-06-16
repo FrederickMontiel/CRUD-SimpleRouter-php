@@ -1,20 +1,20 @@
 <?php
-    //Include composer
-    include_once __DIR__."/vendor/autoload.php";
+require_once __DIR__.'/vendor/autoload.php';
 
-    use EasyProjects\SimpleRouter\Router as Router;
+use App\Routers\UsersRouter;
+use EasyProjects\SimpleRouter\Router;
 
-    use App\Routes\AccountsRoute;
+$router = new Router();
+$router->cors()->setAllowedOrigins("easyprojects.tech", "localhost");
+$router->cors()->setAllowedMethods("GET", "POST", "PUT", "DELETE");
+$router->cors()->setAllowedHeaders("Content-Type", "Authorization");
+$router->autoload();
 
-    $router = new Router();
-    
-    $router->cors(
-        "*",
-        "*",
-        "*"
-    );
+$router->prepareAssets("./App/Views/Assets");
 
-    $router->autoload();
+new UsersRouter($router);
 
-    new AccountsRoute($router);
+$router->start();
+
+
 
